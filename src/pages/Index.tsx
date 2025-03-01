@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Briefcase, BookOpen, Code, Users, Shield, Clock, Award, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,10 +10,27 @@ import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
 import FAQItem from "@/components/FAQItem";
 import StatsSection from "@/components/StatsSection";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const Index = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const openContactModal = () => {
+    setIsContactModalOpen(true);
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+  };
+
   return (
     <main>
+      {/* Contact Form Modal */}
+      <ContactFormModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-infiw3b-50 to-white z-0"></div>
@@ -27,10 +45,12 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button 
-                  asChild
-                  className="bg-infiw3b-600 hover:bg-infiw3b-700 text-white font-medium px-6 py-3 h-auto rounded-md shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-0.5 text-base"
+                  variant="action"
+                  size="auto"
+                  onClick={openContactModal}
+                  className="text-base"
                 >
-                  <Link to="/contact">Book a Free Consultation</Link>
+                  Book a Free Consultation
                 </Button>
                 <Button 
                   asChild
@@ -313,7 +333,8 @@ const Index = () => {
         title="Ready to Elevate Your Career?"
         description="Get the support you need to excel in your job, interviews, and projects. Our experts are ready to help you succeed."
         primaryButtonText="Get Started"
-        primaryButtonLink="/contact"
+        primaryButtonLink="#"
+        primaryButtonOnClick={openContactModal}
         secondaryButtonText="Learn More"
         secondaryButtonLink="/services"
       />

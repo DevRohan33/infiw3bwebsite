@@ -9,6 +9,7 @@ interface CTASectionProps {
   description: string;
   primaryButtonText: string;
   primaryButtonLink: string;
+  primaryButtonOnClick?: () => void;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
   className?: string;
@@ -19,6 +20,7 @@ const CTASection = ({
   description,
   primaryButtonText,
   primaryButtonLink,
+  primaryButtonOnClick,
   secondaryButtonText,
   secondaryButtonLink,
   className = "",
@@ -34,21 +36,36 @@ const CTASection = ({
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                asChild
-                className="bg-infiw3b-600 hover:bg-infiw3b-700 text-white font-medium px-6 py-2.5 h-auto rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-base"
-              >
-                <Link to={primaryButtonLink} className="flex items-center">
+              {primaryButtonOnClick ? (
+                <Button
+                  variant="action"
+                  size="auto"
+                  onClick={primaryButtonOnClick}
+                  className="text-base"
+                >
                   {primaryButtonText}
                   <ArrowRight size={16} className="ml-1.5" />
-                </Link>
-              </Button>
+                </Button>
+              ) : (
+                <Button
+                  asChild
+                  variant="action"
+                  size="auto"
+                  className="text-base"
+                >
+                  <Link to={primaryButtonLink} className="flex items-center">
+                    {primaryButtonText}
+                    <ArrowRight size={16} className="ml-1.5" />
+                  </Link>
+                </Button>
+              )}
               
               {secondaryButtonText && secondaryButtonLink && (
                 <Button
                   asChild
                   variant="outline"
-                  className="border-infiw3b-600 text-infiw3b-600 hover:bg-infiw3b-50 font-medium px-6 py-2.5 h-auto rounded-md transition-all duration-300 text-base"
+                  size="auto"
+                  className="border-infiw3b-600 text-infiw3b-600 hover:bg-infiw3b-50 text-base"
                 >
                   <Link to={secondaryButtonLink}>
                     {secondaryButtonText}
