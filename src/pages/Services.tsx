@@ -245,8 +245,8 @@ const Services = () => {
         primaryButtonText="Contact Us"
         primaryButtonLink="#"
         primaryButtonOnClick={openContactModal}
-        secondaryButtonText="Learn More"
-        secondaryButtonLink="/about"
+        secondaryButtonText="Chat On WhatsApp"
+        secondaryButtonLink="https://wa.me/919433313760"
       />
     </main>
   );

@@ -12,6 +12,7 @@ interface CTASectionProps {
   primaryButtonOnClick?: () => void;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  secondaryButtonOnClick?: () => void;
   className?: string;
 }
 

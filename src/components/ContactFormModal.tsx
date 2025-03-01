@@ -47,6 +47,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
     try {
       // Email sending implementation using EmailJS
       const templateParams = {
+        to_name: "Admin",
         from_name: formData.name,
         reply_to: formData.email,
         phone: formData.phone,
@@ -60,9 +61,9 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          service_id: "service_infiw3b", // Replace with your actual service ID
-          template_id: "template_infiw3b", // Replace with your actual template ID
-          user_id: "tGLXCm7ZoxoE2aBuH", // Replace with your actual user ID
+          service_id: "service_ikvd2i9", // Replace with your actual service ID
+          template_id: "template_mefgdbt", // Replace with your actual template ID
+          user_id: "HjF3fuiabYfwDwVIo", // Replace with your actual user ID
           template_params: templateParams,
         }),
       });

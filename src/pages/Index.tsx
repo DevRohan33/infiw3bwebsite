@@ -37,6 +37,7 @@ const Index = () => {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <AnimatedSection animation="fade-in-up">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#AA55FF] mb-4">Infiw3b</h1>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Excel in Your Career with Expert Job Support & Custom Software Projects
               </h1>
@@ -335,8 +336,8 @@ const Index = () => {
         primaryButtonText="Get Started"
         primaryButtonLink="#"
         primaryButtonOnClick={openContactModal}
-        secondaryButtonText="Learn More"
-        secondaryButtonLink="/services"
+        secondaryButtonText="Chat On WhatsApp"
+        secondaryButtonLink="https://wa.me/919433313760"
       />
     </main>
   );
