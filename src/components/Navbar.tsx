@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -13,6 +13,9 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "FAQ", path: "/faq" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -69,7 +72,6 @@ const Navbar = () => {
             ))}
             <Button
               className="ml-4 bg-infiw3b-600 hover:bg-infiw3b-700 text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-              onClick={() => window.location.href = "/contact"}
             >
               Book Consultation
             </Button>
@@ -113,7 +115,6 @@ const Navbar = () => {
             ))}
             <Button
               className="mt-4 bg-infiw3b-600 hover:bg-infiw3b-700 text-white font-medium w-full"
-              onClick={() => window.location.href = "/contact"}
             >
               Book Consultation
             </Button>
