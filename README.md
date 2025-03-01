@@ -1,69 +1,55 @@
-# Welcome to your Lovable project
+# InfiW3b Website
 
-## Project info
+Welcome to **InfiW3b**, a fully functional and dynamic web platform designed for a seamless experience. This project integrates modern web technologies to provide an interactive and efficient user interface.
 
-**URL**: https://lovable.dev/projects/1334b7b9-d184-4c50-8da4-5c5ce4e0e20b
+## 🚀 Tech Stack
 
-## How can I edit this code?
+- **Vite** – Fast and optimized build tool
+- **React** – UI library for building dynamic applications
+- **TypeScript** – Strictly typed JavaScript for better reliability
+- **shadcn-ui** – Beautiful and accessible UI components
+- **Tailwind CSS** – Utility-first CSS framework for rapid UI development
 
-There are several ways of editing your application.
+## 🔧 Installation & Setup
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/1334b7b9-d184-4c50-8da4-5c5ce4e0e20b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Follow these steps to set up the project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd infiw3bwebsite
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🌐 Live Preview
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Check out the live version here: [InfiW3b Website](https://infiw3bwebsite.vercel.app/)
 
-**Use GitHub Codespaces**
+## 📦 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To deploy this project, you can use **Vercel**:
 
-## What technologies are used for this project?
+1. Push your changes to GitHub
+2. Connect your repository to **Vercel**
+3. Click on **Deploy**
 
-This project is built with .
+Alternatively, you can explore other hosting options like **Netlify**. See [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/) for more details.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 💡 Contributing
 
-## How can I deploy this project?
+Feel free to fork this repository and submit pull requests. Contributions are always welcome!
 
-Simply open [Lovable](https://lovable.dev/projects/1334b7b9-d184-4c50-8da4-5c5ce4e0e20b) and click on Share -> Publish.
+## 📜 License
 
-## I want to use a custom domain - is that possible?
+This project is open-source and licensed under the MIT License.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+💙 Built with love by Rohan Parveag.
