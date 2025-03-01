@@ -211,7 +211,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-infiw3b-600 mr-2" />
                 <a href="https://wa.me/917449955187" target="_blank" rel="noopener noreferrer" className="text-infiw3b-600 hover:underline">
-                  WhatsApp: +91 7499551870
+                  WhatsApp: +91 7449955187
                 </a>
               </div>
               <div className="flex items-center">
