@@ -25,6 +25,23 @@ const CTASection = ({
   secondaryButtonLink,
   className = "",
 }: CTASectionProps) => {
+  // Function to handle scrolling to the services section if on the homepage
+  const handleExploreServices = () => {
+    // Check if we're on the homepage
+    if (window.location.pathname === '/') {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // If not found, navigate to the services page
+        window.location.href = '/services';
+      }
+    } else {
+      // If not on homepage, navigate to the services page
+      window.location.href = '/services';
+    }
+  };
+
   return (
     <section className={`py-16 bg-infiw3b-50 ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +53,17 @@ const CTASection = ({
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              {primaryButtonOnClick ? (
+              {primaryButtonText === "Explore Our Services" ? (
+                <Button
+                  variant="action"
+                  size="auto"
+                  onClick={handleExploreServices}
+                  className="text-base"
+                >
+                  {primaryButtonText}
+                  <ArrowRight size={16} className="ml-1.5" />
+                </Button>
+              ) : primaryButtonOnClick ? (
                 <Button
                   variant="action"
                   size="auto"
