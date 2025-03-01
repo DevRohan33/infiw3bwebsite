@@ -44,19 +44,44 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("Message sent successfully! We'll get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+      // Email sending implementation using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      };
+
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          service_id: "service_infiw3b", // Replace with your actual service ID
+          template_id: "template_infiw3b", // Replace with your actual template ID
+          user_id: "tGLXCm7ZoxoE2aBuH", // Replace with your actual user ID
+          template_params: templateParams,
+        }),
       });
-      onClose();
+
+      if (response.ok) {
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        onClose();
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
+      console.error("Error sending email:", error);
       toast.error("Failed to send message. Please try again later.");
     } finally {
       setIsSubmitting(false);
