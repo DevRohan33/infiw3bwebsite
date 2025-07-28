@@ -39,54 +39,77 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      // Email sending implementation using EmailJS
-      const templateParams = {
-        to_name: "Admin",
-        from_name: formData.name,
-        reply_to: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-      };
+  try {
+    // Prepare webhook data with all required fields
+    const webhookData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || 'Not provided', // Default value if empty
+      subject: formData.subject,
+      message: formData.message,
+      date: new Date().toISOString(),
+      source: 'Website Contact Form'
+    };
 
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    // First send to webhook
+    const webhookResponse = await fetch("https://hook.eu2.make.com/u4icb7snk34g1jka9lu5pl4vdkhssul0", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(webhookData),
+    });
+
+    // Then send email (don't wait for this to complete)
+    const emailPromise = fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: "service_ikvd2i9",
+        template_id: "template_mefgdbt",
+        user_id: "HjF3fuiabYfwDwVIo",
+        template_params: {
+          to_name: "Admin",
+          from_name: formData.name,
+          reply_to: formData.email,
+          phone: formData.phone || 'Not provided',
+          subject: formData.subject,
+          message: formData.message,
         },
-        body: JSON.stringify({
-          service_id: "service_ikvd2i9",
-          template_id: "template_mefgdbt",
-          user_id: "HjF3fuiabYfwDwVIo", 
-          template_params: templateParams,
-        }),
-      });
+      }),
+    }).catch(e => console.error("Email sending failed (non-critical):", e));
 
-      if (response.ok) {
-        toast.success("🎉 Message sent successfully! We'll get back to you within 24 hours.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-        onClose();
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-      toast.error("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
+    if (!webhookResponse.ok) {
+      const errorData = await webhookResponse.text();
+      throw new Error(`Webhook failed: ${errorData}`);
     }
-  };
+
+    toast.success("🎉 Message sent successfully! We'll get back to you within 24 hours.");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+    onClose();
+  } catch (error) {
+    console.error("Submission error:", error);
+    toast.error(
+      error instanceof Error 
+        ? error.message 
+        : "Failed to send message. Please try again later."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(`Hi! I'm interested in your services and would like to book a consultation. 
