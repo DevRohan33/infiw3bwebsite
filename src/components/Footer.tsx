@@ -1,111 +1,224 @@
-
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock,
+  MessageSquare,
+  Twitter,
+  Linkedin,
+  Github,
+  Facebook
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link to="/" className="text-2xl font-display font-bold text-infiw3b-800 flex items-center">
-              <span className="text-infiw3b-600">Infi</span>
-              <span className="text-infiw3b-800">w3b</span>
+            <Link to="/" className="flex items-center">
+              <span className="text-3xl font-bold text-[#AA55FF]">Infiw3b</span>
             </Link>
-            <p className="text-gray-600 mt-2">
-              Your trusted partner for job support, interview preparation, and software projects.
+            <p className="text-gray-400">
+              Empowering professionals with expert job support, interview preparation, 
+              and custom software solutions.
             </p>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-500 hover:text-infiw3b-600 transition-colors duration-300">
-                <Facebook size={20} />
+            <div className="flex space-x-4">
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-infiw3b-600 transition-colors duration-300">
-                <Twitter size={20} />
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-infiw3b-600 transition-colors duration-300">
-                <Linkedin size={20} />
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-infiw3b-600 transition-colors duration-300">
-                <Instagram size={20} />
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900">Quick Links</h3>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Home</Link>
+                <Link 
+                  to="/" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">About Us</Link>
+                <Link 
+                  to="/services" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Services
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Services</Link>
+                <Link 
+                  to="/about" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Pricing</Link>
+                <Link 
+                  to="/contact" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Contact
+                </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Testimonials</Link>
+                <Link 
+                  to="/privacy" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/faq" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">FAQ</Link>
+                <Link 
+                  to="/terms" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900">Our Services</h3>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services#job-support" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Job Support</Link>
+                <Link 
+                  to="/services#job-support" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Expert Job Support
+                </Link>
               </li>
               <li>
-                <Link to="/services#interview-prep" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Interview Preparation</Link>
+                <Link 
+                  to="/services#interview-prep" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Interview Preparation
+                </Link>
               </li>
               <li>
-                <Link to="/services#software-projects" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Software Projects</Link>
+                <Link 
+                  to="/services#software-projects" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Software Projects
+                </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">Custom Solutions</Link>
+                <Link 
+                  to="/services#resume-review" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Resume Optimization
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services#career-guidance" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Career Guidance
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services#consultation" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  Free Consultation
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <Phone size={18} className="text-infiw3b-600 mt-0.5" />
-                <span className="text-gray-600">+91 749955187<br />+91 9433313760</span>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <div>
+                  
+                  <a 
+                    href="https://wa.me/919433313760" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  >
+                    +91 9433313760
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start space-x-3">
-                <Mail size={18} className="text-infiw3b-600 mt-0.5" />
-                <a href="mailto:infiw3b@yahoo.com" className="text-gray-600 hover:text-infiw3b-600 transition-colors duration-300">infiw3b@yahoo.com</a>
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <a 
+                  href="mailto:infiw3b@gmail.com" 
+                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                >
+                  infiw3b@gmail.com
+                </a>
               </li>
-              <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-infiw3b-600 mt-0.5" />
-                <span className="text-gray-600">www.infiw3b.com</span>
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <span className="text-gray-400">
+                  Kolkata, West Bengal, India
+                </span>
+              </li>
+              <li className="flex items-start">
+                <Clock className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <span className="text-gray-400">
+                  Mon-Fri: 9AM-6PM IST<br />
+                  Sat: 10AM-3PM IST
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Infiw3b. All rights reserved.
-            </p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-gray-500 hover:text-infiw3b-600 text-sm transition-colors duration-300">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-gray-500 hover:text-infiw3b-600 text-sm transition-colors duration-300">Terms of Service</Link>
-            </div>
-          </div>
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+          <p className="text-gray-500 text-sm">
+            &copy; {currentYear} Infiw3b. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

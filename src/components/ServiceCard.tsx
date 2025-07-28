@@ -13,6 +13,7 @@ interface ServiceCardProps {
   buttonText?: string;
   buttonOnClick?: () => void;
   detailedDescription?: string;
+  className?: string;
 }
 
 const ServiceCard = ({
@@ -32,7 +33,7 @@ const ServiceCard = ({
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden h-full flex flex-col">
       <div className="p-6 flex-grow">
         <div className="w-12 h-12 flex items-center justify-center bg-infiw3b-100 text-infiw3b-600 rounded-lg mb-4">
           {icon}
