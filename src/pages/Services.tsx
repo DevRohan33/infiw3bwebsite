@@ -444,8 +444,8 @@ const Services = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Project Pricing</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { type: "Small Projects", price: "₹1,000+", desc: "Simple web apps, basic CRUD operations" },
-                  { type: "Medium Projects", price: "₹2,000+", desc: "Full-stack apps with authentication" },
+                  { type: "Small Projects", price: "₹999+", desc: "Simple web apps, basic CRUD operations" },
+                  { type: "Medium Projects", price: "₹3,999+", desc: "Full-stack apps with authentication" },
                   { type: "Large Projects", price: "Custom Quote", desc: "Enterprise solutions, complex systems" }
                 ].map((pricing, index) => (
                   <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200">

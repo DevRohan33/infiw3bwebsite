@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 import { 
   Dialog,
   DialogContent, 
@@ -29,6 +30,16 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -43,73 +54,61 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   setIsSubmitting(true);
 
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone || 'Not provided',
+    subject: formData.subject,
+    message: formData.message,
+    timestamp: new Date().toISOString(),
+    source: 'Website Contact Form'
+  };
+
+  console.log("Sending payload to Make.com:", payload);
+
   try {
-    // Prepare webhook data with all required fields
-    const webhookData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || 'Not provided', // Default value if empty
-      subject: formData.subject,
-      message: formData.message,
-      date: new Date().toISOString(),
-      source: 'Website Contact Form'
-    };
-
-    // First send to webhook
-    const webhookResponse = await fetch("https://hook.eu2.make.com/u4icb7snk34g1jka9lu5pl4vdkhssul0", {
+    //  Send to Make.com webhook
+    const webhookResponse = await fetch("https://hook.eu2.make.com/cp7p2iajr7f7unun3ambaszlsev7nklt", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body: JSON.stringify(webhookData),
+      body: JSON.stringify(payload),
     });
-
-    // Then send email (don't wait for this to complete)
-    const emailPromise = fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        service_id: "service_ikvd2i9",
-        template_id: "template_mefgdbt",
-        user_id: "HjF3fuiabYfwDwVIo",
-        template_params: {
-          to_name: "Admin",
-          from_name: formData.name,
-          reply_to: formData.email,
-          phone: formData.phone || 'Not provided',
-          subject: formData.subject,
-          message: formData.message,
-        },
-      }),
-    }).catch(e => console.error("Email sending failed (non-critical):", e));
 
     if (!webhookResponse.ok) {
-      const errorData = await webhookResponse.text();
-      throw new Error(`Webhook failed: ${errorData}`);
+      throw new Error(`Make webhook failed: ${webhookResponse.status}`);
     }
 
-    toast.success("🎉 Message sent successfully! We'll get back to you within 24 hours.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-    onClose();
+    // 2️⃣ Send to EmailJS
+    await emailjs.send(
+      "service_ikvd2i9",         // Replace with your actual EmailJS service ID
+      "template_mefgdbt",        // Replace with your template ID
+      {
+        to_name: "Admin",
+        from_name: formData.name,
+        reply_to: formData.email,
+        phone: formData.phone || 'Not provided',
+        subject: formData.subject,
+        message: formData.message,
+      },
+      "HjF3fuiabYfwDwVIo"        // Replace with your EmailJS public key (user ID)
+    );
+
+    toast.success("🎉 Message sent successfully!");
+    resetForm(); // Make sure this function clears the form fields
+    onClose();   // Closes the modal/form
+
   } catch (error) {
     console.error("Submission error:", error);
-    toast.error(
-      error instanceof Error 
-        ? error.message 
-        : "Failed to send message. Please try again later."
-    );
+    toast.error("Failed to send message. Please try WhatsApp or email.");
   } finally {
     setIsSubmitting(false);
   }
 };
+
+
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(`Hi! I'm interested in your services and would like to book a consultation. 

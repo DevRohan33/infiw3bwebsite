@@ -43,52 +43,76 @@ const ContactPage = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      // Email sending implementation using EmailJS
-      const templateParams = {
-        to_name: "Admin",
-        from_name: formData.name,
-        reply_to: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-      };
-
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          service_id: "service_ikvd2i9",
-          template_id: "template_mefgdbt",
-          user_id: "HjF3fuiabYfwDwVIo",
-          template_params: templateParams,
-        }),
-      });
-
-      if (response.ok) {
-        toast.success("Message sent successfully! We'll get back to you soon.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-      toast.error("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
+  // 1️⃣ Prepare form data
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone || "Not provided",
+    subject: formData.subject,
+    message: formData.message,
+    timestamp: new Date().toISOString(),
+    source: "Website Contact Form",
   };
+
+  try {
+    // 2️⃣ Send to Make.com Webhook
+    const webhookRes = await fetch("https://hook.eu2.make.com/cp7p2iajr7f7unun3ambaszlsev7nklt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!webhookRes.ok) {
+      console.warn("Webhook failed:", webhookRes.status);
+    }
+
+    // 3️⃣ Send Email via EmailJS
+    const emailResponse = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: "service_ikvd2i9",
+        template_id: "template_mefgdbt",
+        user_id: "HjF3fuiabYfwDwVIo",
+        template_params: {
+          to_name: "Admin",
+          from_name: formData.name,
+          reply_to: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      }),
+    });
+
+    if (emailResponse.ok) {
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      throw new Error("Failed to send email via EmailJS");
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    toast.error("Failed to send message. Please try again later.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <main>
