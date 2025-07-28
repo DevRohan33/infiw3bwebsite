@@ -38,8 +38,7 @@ const About = () => {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
-              <span className="text-gray-900">About</span>
-              <br />
+              <span className="text-gray-900">About</span> {" "}
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
                 Infiw3b
               </span>
@@ -56,7 +55,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
                 { number: "500+", label: "Professionals Helped", icon: "👥" },
-                { number: "98%", label: "Success Rate", icon: "📈" },
+                { number: "95%", label: "Success Rate", icon: "📈" },
                 { number: "24/7", label: "Support Available", icon: "🚀" }
               ].map((stat, index) => (
                 <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 transform hover:scale-105 transition-all duration-300">

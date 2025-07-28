@@ -1,251 +1,3 @@
-// import { useState } from "react";
-// import { Shield, Trophy, BarChart, Zap, PenTool, Code } from "lucide-react";
-// import ServiceCard from "@/components/ServiceCard";
-// import AnimatedSection from "@/components/AnimatedSection";
-// import { Button } from "@/components/ui/button";
-// import CTASection from "@/components/CTASection";
-// import ContactFormModal from "@/components/ContactFormModal";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// const Services = () => {
-//   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-//   const openContactModal = () => setIsContactModalOpen(true);
-//   const closeContactModal = () => setIsContactModalOpen(false);
-
-//   return (
-//     <main>
-//       <Navbar />
-//       <ContactFormModal isOpen={isContactModalOpen} onClose={closeContactModal} />
-
-//       {/* Header */}
-//       <section className="pt-40 pb-16 md:pt-48 md:pb-24 bg-infiw3b-50 relative overflow-hidden">
-//         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#2b7cc1_1px,transparent_1px)] [background-size:16px_16px]" />
-//         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-//           <AnimatedSection animation="fade-in-up" className="text-center max-w-4xl mx-auto">
-//             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h1>
-//             <p className="text-xl text-gray-700 mb-8">
-//               Comprehensive solutions to help you succeed in your career and projects. From job support to custom software development, we've got you covered.
-//             </p>
-//             <Button variant="action" size="auto" onClick={openContactModal} className="text-base">
-//               Get a Free Consultation
-//             </Button>
-//           </AnimatedSection>
-//         </div>
-//       </section>
-
-//       {/* Job Support */}
-//       <section id="job-support" className="py-16 md:py-24 bg-white">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-//             <span className="inline-block bg-infiw3b-100 text-infiw3b-600 px-4 py-1 rounded-full text-sm font-medium mb-4">
-//               Job Support
-//             </span>
-//             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Expert Job Support</h2>
-//             <p className="text-xl text-gray-600">
-//               Struggling with job tasks? Get real-time help from industry experts for BA, QA, DevOps, Full Stack, and more.
-//             </p>
-//           </AnimatedSection>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <AnimatedSection animation="fade-in-up" delay={100}>
-//               <ServiceCard
-//                 icon={<Shield size={24} />}
-//                 title="Business Analyst Support"
-//                 description="BA domain support: requirements, analysis, documentation."
-//                 features={[
-//                   "User story writing & refinement",
-//                   "Stakeholder management",
-//                   "Process mapping",
-//                   "Agile documentation"
-//                 ]}
-//                 buttonText="Get Support"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={200}>
-//               <ServiceCard
-//                 icon={<Code size={24} />}
-//                 title="Developer Support"
-//                 description="Real-time support for dev tasks and architecture decisions."
-//                 features={[
-//                   "Code review & debugging",
-//                   "API / backend support",
-//                   "Spring Boot / Full Stack",
-//                   "Performance optimization"
-//                 ]}
-//                 buttonText="Get Support"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={300}>
-//               <ServiceCard
-//                 icon={<Zap size={24} />}
-//                 title="QA Support"
-//                 description="Testing guidance for manual & automation testing roles."
-//                 features={[
-//                   "Test case design",
-//                   "Automation framework",
-//                   "Selenium, Postman, JIRA",
-//                   "Defect management"
-//                 ]}
-//                 buttonText="Get Support"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Interview Preparation */}
-//       <section id="interview-prep" className="py-16 md:py-24 bg-gray-50">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-//             <span className="inline-block bg-infiw3b-100 text-infiw3b-600 px-4 py-1 rounded-full text-sm font-medium mb-4">
-//               Interview Prep
-//             </span>
-//             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Interview Preparation</h2>
-//             <p className="text-xl text-gray-600">
-//               Be fully prepared with mock sessions, resume tuning, and live assistance during real interviews.
-//             </p>
-//           </AnimatedSection>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <AnimatedSection animation="fade-in-up" delay={100}>
-//               <ServiceCard
-//                 icon={<Trophy size={24} />}
-//                 title="Mock Interviews"
-//                 description="Practice sessions with real feedback from domain experts."
-//                 features={[
-//                   "Real interview simulation",
-//                   "Behavioral & technical rounds",
-//                   "Detailed feedback",
-//                   "Confidence coaching"
-//                 ]}
-//                 buttonText="Book Session"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={200}>
-//               <ServiceCard
-//                 icon={<BarChart size={24} />}
-//                 title="Resume Optimization"
-//                 description="Boost your resume with ATS and recruiter friendly format."
-//                 features={[
-//                   "Keyword optimization",
-//                   "Role-based CV tuning",
-//                   "Professional design",
-//                   "Free review session"
-//                 ]}
-//                 buttonText="Get Started"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={300}>
-//               <ServiceCard
-//                 icon={<PenTool size={24} />}
-//                 title="Live Interview Assistance"
-//                 description="Get real-time help during the interview process."
-//                 features={[
-//                   "Silent tech support",
-//                   "Quick Q&A support",
-//                   "Post-call feedback",
-//                   "Stress management tips"
-//                 ]}
-//                 buttonText="Learn More"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Software Projects */}
-//       <section id="software-projects" className="py-16 md:py-24 bg-white">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-//             <span className="inline-block bg-infiw3b-100 text-infiw3b-600 px-4 py-1 rounded-full text-sm font-medium mb-4">
-//               Custom Projects
-//             </span>
-//             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Software Project Solutions</h2>
-//             <p className="text-xl text-gray-600">
-//               Get high-quality, scalable, and well-documented software projects tailored to your academic or professional needs.
-//             </p>
-//           </AnimatedSection>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <AnimatedSection animation="fade-in-up" delay={100}>
-//               <ServiceCard
-//                 icon={<Code size={24} />}
-//                 title="Academic Projects"
-//                 description="Final year projects with clean source code and full docs."
-//                 features={[
-//                   "Custom development",
-//                   "Presentation ready",
-//                   "Demo videos",
-//                   "Github repo setup"
-//                 ]}
-//                 buttonText="Get Quote"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={200}>
-//               <ServiceCard
-//                 icon={<Zap size={24} />}
-//                 title="Professional Projects"
-//                 description="Scalable codebase for clients, startups, and teams."
-//                 features={[
-//                   "Backend/frontend systems",
-//                   "Clean architecture",
-//                   "API integrations",
-//                   "Ongoing support"
-//                 ]}
-//                 buttonText="Discuss Project"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-
-//             <AnimatedSection animation="fade-in-up" delay={300}>
-//               <ServiceCard
-//                 icon={<Shield size={24} />}
-//                 title="Proof of Concept (PoC)"
-//                 description="Test new ideas with quick MVP builds and prototypes."
-//                 features={[
-//                   "Feasibility check",
-//                   "Minimal design",
-//                   "Rapid execution",
-//                   "Ready for funding pitch"
-//                 ]}
-//                 buttonText="Get Started"
-//                 buttonOnClick={openContactModal}
-//               />
-//             </AnimatedSection>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <CTASection
-//         title="Ready to Elevate Your Career?"
-//         description="Get the support you need to excel in your job, interviews, and projects. Our experts are ready to help you succeed."
-//         primaryButtonText="Get Started"
-//         primaryButtonLink="#"
-//         primaryButtonOnClick={openContactModal}
-//         secondaryButtonText="Chat On WhatsApp"
-//         secondaryButtonLink="https://wa.me/919433313760"
-//       />
-//     <Footer/>
-//     </main>
-//   );
-// };
-
-// export default Services;
-
 import { useState } from "react";
 import { Shield, Trophy, BarChart, Zap, PenTool, Code, Users, Clock, Star, CheckCircle } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
@@ -401,22 +153,25 @@ const Services = () => {
 
           {/* Domain Expertise Banner */}
           <AnimatedSection className="mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Domains We Cover</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {[
-                  "Business Analyst", "Salesforce", "Full Stack", "Java/Spring", "DevOps", "Power BI",
-                  ".NET", "RPA", "SAP", "QA Testing", "Data Engineering", "Cloud"
-                ].map((domain, index) => (
-                  <div key={index} className="text-center">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      {domain}
-                    </div>
+          <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-200">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+              Domains We Cover
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {[
+                "Business Analyst", "Salesforce", "Full Stack", "Java/Spring", "DevOps", "Power BI",
+                ".NET", "RPA", "SAP", "QA Testing", "Data Engineering", "Cloud"
+              ].map((domain, index) => (
+                <div key={index} className="text-center">
+                  <div className="bg-blue-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-300 transition-colors duration-200">
+                    {domain}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          </AnimatedSection>
+          </div>
+        </AnimatedSection>
+
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection animation="fade-in-up" delay={100}>
@@ -606,26 +361,29 @@ const Services = () => {
 
           {/* Technology Stack */}
           <AnimatedSection className="mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Technologies We Work With</h3>
+            <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-200">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
+                Technologies We Work With
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {[
-                  { name: "React", color: "from-blue-400 to-blue-600" },
-                  { name: "Node.js", color: "from-green-400 to-green-600" },
-                  { name: "Python", color: "from-yellow-400 to-orange-500" },
-                  { name: "Java", color: "from-red-400 to-red-600" },
-                  { name: "AWS", color: "from-orange-400 to-yellow-500" },
-                  { name: "MongoDB", color: "from-green-500 to-teal-500" }
+                  "React",
+                  "Node.js",
+                  "Python",
+                  "Java",
+                  "AWS",
+                  "MongoDB"
                 ].map((tech, index) => (
-                  <div key={index} className="text-center group cursor-pointer">
-                    <div className={`bg-gradient-to-r ${tech.color} text-white px-4 py-3 rounded-xl text-sm font-medium transform group-hover:scale-105 transition-all duration-300 shadow-lg`}>
-                      {tech.name}
+                  <div key={index} className="text-center">
+                    <div className="bg-red-100 hover:bg-red-300 text-gray-700 px-4 py-3 rounded-xl text-sm font-medium shadow-sm transition-all duration-200">
+                      {tech}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           </AnimatedSection>
+
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection animation="fade-in-up" delay={100}>
