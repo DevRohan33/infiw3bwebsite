@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Briefcase, BookOpen, Code, Users, Shield, Clock, Award, Zap, Star, CheckCircle, TrendingUp, Globe, Rocket, Target,ShieldCheck,HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -10,7 +11,6 @@ import CTASection from "@/components/CTASection";
 import FAQItem from "@/components/FAQItem";
 import StatsSection from "@/components/StatsSection";
 import ContactFormModal from "@/components/ContactFormModal";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { User } from "lucide-react";
 
@@ -27,7 +27,14 @@ const Index = () => {
 
   return (
     <main>
-      <Navbar />
+      <Helmet>
+        <title>Infiw3b - Elite Job & Project Support | Strategic Interview Guidance</title>
+        <meta name="description" content="Accelerate your tech career with Infiw3b. We provide expert-led job support, AI & software solutions, and strategic interview guidance." />
+        <meta name="keywords" content="job support, project support, interview guidance, AI automation, software solutions, Python, web development, 3D projects" />
+        <meta property="og:title" content="Infiw3b - Elite Job & Project Support | Strategic Interview Guidance" />
+        <meta property="og:description" content="Accelerate your tech career with Infiw3b. Expert-led job support and strategic interview guidance." />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Contact Form Modal */}
       <ContactFormModal 
         isOpen={isContactModalOpen} 
@@ -59,40 +66,40 @@ const Index = () => {
               <div className="text-center lg:text-left">
                 <AnimatedSection animation="fade-in-up">
                   {/* Badge */}
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 mb-6">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                    <span className="text-sm font-medium text-purple-700">500+ Professionals Helped</span>
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-infiw3b-50 border border-infiw3b-100 mb-6">
+                    <span className="w-2 h-2 bg-infiw3b-500 rounded-full mr-2 animate-pulse"></span>
+                    <span className="text-sm font-medium text-infiw3b-700">Empowering 500+ Professionals</span>
                   </div>
 
                   {/* Main Heading */}
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
+                    <span className="bg-gradient-to-r from-infiw3b-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">
                       Infiw3b
                     </span>
                     <br />
                     <span className="text-gray-900 text-4xl md:text-5xl lg:text-6xl">
-                      Excel in Your 
+                      Accelerate Your
                     </span>
                     <br />
                     <span className="relative text-4xl md:text-5xl lg:text-6xl text-gray-900">
-                      Career Journey
-                      <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full transform scale-x-0 animate-scale-x"></div>
+                      Tech Career
+                      <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-infiw3b-400 to-violet-400 rounded-full transform scale-x-0 animate-scale-x"></div>
                     </span>
                   </h1>
 
                   {/* Subtitle */}
                   <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    Transform your career with <span className="font-semibold text-purple-600">expert job support</span>, 
-                    <span className="font-semibold text-pink-600"> interview preparation</span>, and 
-                    <span className="font-semibold text-blue-600"> custom software projects</span>. 
+                    Elevate your professional journey with <span className="font-semibold text-infiw3b-600">elite job & project support</span>, 
+                    <span className="font-semibold text-violet-600"> strategic interview guidance</span>, and 
+                    <span className="font-semibold text-indigo-600"> enterprise-grade AI & software solutions</span>.
                   </p>
 
                   {/* Features List */}
                   <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
                     {[
-                      { icon: "🚀", text: "Real-time Support" },
-                      { icon: "🎯", text: "Expert Guidance" },
-                      { icon: "🛡️", text: "100% Guaranteed" }
+                      { icon: "🚀", text: "24/7 Expert Support" },
+                      { icon: "🎯", text: "Strategic Guidance" },
+                      { icon: "🛡️", text: "Guaranteed Results" }
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100">
                         <span className="mr-2 text-lg">{feature.icon}</span>
@@ -105,19 +112,19 @@ const Index = () => {
                   <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                     <Button 
                       onClick={openContactModal}
-                      className="relative group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="relative group bg-gradient-to-r from-infiw3b-600 to-violet-600 hover:from-infiw3b-700 hover:to-violet-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       <span className="relative z-10 flex items-center">
                         📞 Book Free Consultation
                         <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-infiw3b-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </Button>
                     
                     <Button 
                       asChild
                       variant="outline"
-                      className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/50"
+                      className="border-2 border-infiw3b-200 text-infiw3b-700 hover:bg-infiw3b-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/50"
                     >
                       <Link to="/services" className="flex items-center">
                         🔍 Explore Services
@@ -274,12 +281,12 @@ const Index = () => {
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <AnimatedSection animation="fade-in-up">
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-200 mb-6">
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-infiw3b-50 border border-infiw3b-100 mb-6">
                 <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                <span className="text-sm font-semibold text-purple-700">Trusted by Industry Leaders</span>
+                <span className="text-sm font-semibold text-infiw3b-700">Trusted by Industry Leaders</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">500+</span> Professionals Choose Us
+                Why <span className="bg-gradient-to-r from-infiw3b-600 to-violet-600 bg-clip-text text-transparent">500+</span> Professionals Choose Us
               </h2>
             </AnimatedSection>
           </div>
@@ -387,13 +394,13 @@ const Index = () => {
             {[
               {
                 icon: <Briefcase className="w-10 h-10" />,
-                title: "Expert Job Support",
-                description: "Get real-time assistance from industry veterans who understand your challenges",
+                title: "Job & Project Support",
+                description: "Get real-time assistance for your daily tasks and complex AI Automation workflows",
                 features: [
-                  "Live troubleshooting sessions",
-                  "Task completion guidance", 
-                  "Best practices mentoring",
-                  "Career advancement tips"
+                  "AI/ML & RAG Automation",
+                  "Advanced Chatbot setups",
+                  "Python & Web Development", 
+                  "Multi-tenant solutions"
                 ],
                 gradient: "from-green-400 to-emerald-600",
                 link: "/services#job-support",
@@ -401,13 +408,13 @@ const Index = () => {
               },
               {
                 icon: <BookOpen className="w-10 h-10" />,
-                title: "Interview Mastery",
-                description: "Ace any interview with our proven preparation and live assistance programs",
+                title: "Interview Guidance",
+                description: "Master your interviews with professional mentoring and document optimization",
                 features: [
-                  "Mock interview sessions",
+                  "Strategic interview guidance",
                   "Resume optimization", 
-                  "Technical prep materials",
-                  "Live interview support"
+                  "Professional CV readiness",
+                  "Technical prep sessions"
                 ],
                 gradient: "from-purple-500 to-pink-600",
                 link: "/services#interview-prep",
@@ -415,13 +422,13 @@ const Index = () => {
               },
               {
                 icon: <Code className="w-10 h-10" />,
-                title: "Custom Software Projects",
-                description: "Industry-grade solutions tailored to your academic or professional needs",
+                title: "Custom Technical Projects",
+                description: "Bespoke development for RAG Chatbots, AI Automation, and Enterprise systems",
                 features: [
-                  "Complete source code",
-                  "Detailed documentation", 
-                  "GitHub repository setup",
-                  "Custom requirements"
+                  "Advanced RAG Chatbot Systems",
+                  "AI Automation Architecture", 
+                  "Multi-tenant SaaS platforms",
+                  "3D & Interactive Portals"
                 ],
                 gradient: "from-blue-500 to-cyan-600",
                 link: "/services#software-projects",
@@ -833,15 +840,15 @@ const Index = () => {
                   {/* Domains List */}
                   <div className="space-y-4 mb-8">
                     {[
-                      { name: "Business Analyst (All Domains)", icon: "📊", popular: true },
-                      { name: "Salesforce BA & QA", icon: "☁️", popular: false },
-                      { name: "Full Stack Development", icon: "💻", popular: true },
-                      { name: "Java (Spring Boot, Microservices)", icon: "☕", popular: true },
-                      { name: "DevOps & Cloud Architecture", icon: "🚀", popular: false },
-                      { name: "Power BI, Oracle DBA, .NET", icon: "📈", popular: false },
-                      { name: "RPA, SAP HCM & Finance", icon: "🤖", popular: false },
-                      { name: "QA Automation & Testing", icon: "🔧", popular: true },
-                      { name: "Data Engineering & AI/ML", icon: "🧠", popular: true }
+                      { name: "Web Services & Fullstack", icon: "🌐", popular: true },
+                      { name: "3D Development & 3D Projects", icon: "🧊", popular: false },
+                      { name: "Generative AI & LLMs", icon: "✨", popular: true },
+                      { name: "DevOps & Cloud (AWS, Azure)", icon: "🚀", popular: false },
+                      { name: "Python & AI Automation", icon: "🐍", popular: true },
+                      { name: "REST API & Microservices", icon: "🔌", popular: false },
+                      { name: "Machine Learning & ML", icon: "🤖", popular: true },
+                      { name: "Data Analysis & Insights", icon: "📊", popular: false },
+                      { name: "Custom Software & AI Projects", icon: "🧠", popular: true }
                     ].map((domain, index) => (
                       <div key={index} className="group flex items-center p-4 rounded-xl bg-gradient-to-r from-gray-50 to-purple-50 hover:from-purple-50 hover:to-pink-50 transition-all duration-300 border border-gray-100 hover:border-purple-200 hover:shadow-md">
                         {domain.popular && (
@@ -952,16 +959,16 @@ const Index = () => {
             <AnimatedSection animation="fade-in-up">
               <div className="bg-white rounded-xl shadow-sm p-8">
                 <FAQItem
-                  question="Is your job support guaranteed?"
-                  answer="Yes! We provide 100% guaranteed support from real experts to ensure your success. Our team is available to help you overcome any challenges you face in your job."
+                  question="What kind of job support do you provide?"
+                  answer="We provide technical support for daily job tasks and projects, including AI/ML work, AI automation, Python, Web development, 3D projects, and small software solutions."
                 />
                 <FAQItem
-                  question="Can I get live interview assistance?"
-                  answer="Yes! Our experts provide real-time help during interviews to ensure you perform at your best when it matters most."
+                  question="Do you offer interview preparation?"
+                  answer="We provide professional interview guidance, CV readiness, and resume optimization. Please note that we do not offer mock interviews or interview proxy services."
                 />
                 <FAQItem
-                  question="Are my details confidential?"
-                  answer="Absolutely! Your personal and job details are fully secure with us. We maintain strict confidentiality protocols to protect your information."
+                   question="Are my details confidential?"
+                   answer="Absolutely! Your personal and job details are fully secure with us. We maintain strict confidentiality protocols to protect your information."
                 />
                 <FAQItem
                   question="How do I book a service?"
@@ -969,7 +976,7 @@ const Index = () => {
                 />
                 <FAQItem
                   question="What are your pricing plans?"
-                  answer="We offer custom pricing based on your specific requirements. Small software projects start at ₹1000, while medium projects start at ₹2000. Contact us for a personalized quote."
+                  answer="Our pricing is customized based on project complexity. Small personal or technical projects start at competitive rates. Contact us for a personalized quote."
                 />
               </div>
             </AnimatedSection>

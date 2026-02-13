@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center">
-              <span className="text-3xl font-bold text-[#AA55FF]">Infiw3b</span>
+              <span className="text-3xl font-bold text-infiw3b-500">Infiw3b</span>
             </Link>
             <p className="text-gray-400">
               Empowering professionals with expert job support, interview preparation, 
@@ -31,28 +31,28 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Home
                 </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Services
                 </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/about" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   About Us
                 </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/contact" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Contact
                 </Link>
@@ -99,7 +99,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/privacy" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/terms" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -122,7 +122,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#job-support" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Expert Job Support
                 </Link>
@@ -130,7 +130,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#interview-prep" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Interview Preparation
                 </Link>
@@ -138,7 +138,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#software-projects" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Software Projects
                 </Link>
@@ -146,7 +146,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#resume-review" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Resume Optimization
                 </Link>
@@ -154,7 +154,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#career-guidance" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Career Guidance
                 </Link>
@@ -162,7 +162,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services#consultation" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   Free Consultation
                 </Link>
@@ -175,36 +175,36 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-infiw3b-500 mt-0.5 mr-3 flex-shrink-0" />
                 <div>
                   
                   <a 
                     href="https://wa.me/919433313760" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                    className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                   >
                     +91 9433313760
                   </a>
                 </div>
               </li>
               <li className="flex items-start">
-                <Mail className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-infiw3b-500 mt-0.5 mr-3 flex-shrink-0" />
                 <a 
                   href="mailto:infiw3b@gmail.com" 
-                  className="text-gray-400 hover:text-[#AA55FF] transition-colors"
+                  className="text-gray-400 hover:text-infiw3b-500 transition-colors"
                 >
                   infiw3b@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-infiw3b-500 mt-0.5 mr-3 flex-shrink-0" />
                 <span className="text-gray-400">
                   Kolkata, West Bengal, India
                 </span>
               </li>
               <li className="flex items-start">
-                <Clock className="h-5 w-5 text-[#AA55FF] mt-0.5 mr-3 flex-shrink-0" />
+                <Clock className="h-5 w-5 text-infiw3b-500 mt-0.5 mr-3 flex-shrink-0" />
                 <span className="text-gray-400">
                   Mon-Fri: 9AM-6PM IST<br />
                   Sat: 10AM-3PM IST

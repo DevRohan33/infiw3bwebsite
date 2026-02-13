@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -116,6 +117,13 @@ const ContactPage = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Contact Infiw3b - Book Your Free Career Consultation</title>
+        <meta name="description" content="Get in touch with Infiw3b for personalized job support and project solutions. Book a free consultation via form or WhatsApp." />
+        <meta name="keywords" content="contact infiw3b, career consultation, job support help, technical project inquiry" />
+        <meta property="og:title" content="Contact Infiw3b - Book Your Free Career Consultation" />
+        <meta property="og:description" content="Get in touch with Infiw3b for personalized job support and project solutions." />
+      </Helmet>
       <Navbar/>
       
       {/* Enhanced Hero Section */}
@@ -143,30 +151,30 @@ const ContactPage = () => {
               <div className="text-center lg:text-left">
                 <AnimatedSection animation="fade-in-up">
                   {/* Badge */}
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 mb-6">
-                    <MessageSquare className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-sm font-medium text-blue-700">Let's Connect</span>
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-infiw3b-50 border border-infiw3b-200 mb-6">
+                    <MessageSquare className="w-4 h-4 text-infiw3b-600 mr-2" />
+                    <span className="text-sm font-medium text-infiw3b-700">Let's Connect</span>
                   </div>
 
                   {/* Main Heading */}
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                     <span className="text-gray-900">Get in</span>
                     <br />
-                    <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+                    <span className="bg-gradient-to-r from-infiw3b-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">
                       Touch
                     </span>
                     <br />
                     <span className="relative text-4xl md:text-5xl lg:text-6xl text-gray-900">
                       with Infiw3b
-                      <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transform scale-x-0 animate-scale-x"></div>
+                      <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-infiw3b-400 to-violet-400 rounded-full transform scale-x-0 animate-scale-x"></div>
                     </span>
                   </h1>
 
                   {/* Subtitle */}
                   <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Ready to accelerate your career? Our expert team is here to provide 
-                    <span className="font-semibold text-blue-600"> personalized support</span> and 
-                    <span className="font-semibold text-purple-600"> innovative solutions</span>.
+                    <span className="font-semibold text-infiw3b-600"> personalized support</span> and 
+                    <span className="font-semibold text-violet-600"> innovative solutions</span>.
                   </p>
 
                   {/* Quick Stats */}
@@ -187,21 +195,21 @@ const ContactPage = () => {
                   <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                     <Button 
                       asChild
-                      className="relative group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="relative group bg-gradient-to-r from-infiw3b-600 to-violet-600 hover:from-infiw3b-700 hover:to-violet-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       <a href="https://wa.me/919433313760" target="_blank" rel="noopener noreferrer">
                         <span className="relative z-10 flex items-center">
                           📱 WhatsApp Now
                           <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-infiw3b-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </a>
                     </Button>
                     
                     <Button 
                       asChild
                       variant="outline"
-                      className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/50"
+                      className="border-2 border-infiw3b-300 text-infiw3b-700 hover:bg-infiw3b-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/50"
                     >
                       <a href="mailto:infiw3b@gmail.com" className="flex items-center">
                         📧 Send Email
@@ -318,7 +326,7 @@ const ContactPage = () => {
                 
                 <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   Multiple Ways to 
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Reach Us</span>
+                  <span className="bg-gradient-to-r from-infiw3b-600 to-violet-600 bg-clip-text text-transparent"> Reach Us</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Choose your preferred communication method. Our dedicated team typically responds 
@@ -430,9 +438,9 @@ const ContactPage = () => {
                   
                   <div className="relative">
                     <div className="text-center mb-8">
-                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-200 mb-4">
-                        <Send className="w-4 h-4 text-purple-600 mr-2" />
-                        <span className="text-sm font-medium text-purple-700">Send us a Message</span>
+                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-infiw3b-50 border border-infiw3b-200 mb-4">
+                        <Send className="w-4 h-4 text-infiw3b-600 mr-2" />
+                        <span className="text-sm font-medium text-infiw3b-700">Send us a Message</span>
                       </div>
                       <h2 className="text-3xl font-bold text-gray-900 mb-2">Let's Start the Conversation</h2>
                       <p className="text-gray-600">Tell us about your needs and we'll get back to you with a personalized solution.</p>
@@ -519,7 +527,7 @@ const ContactPage = () => {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                        className="w-full bg-gradient-to-r from-infiw3b-600 to-violet-600 hover:from-infiw3b-700 hover:to-violet-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                       >
                         {isSubmitting ? (
                           <span className="flex items-center justify-center">
@@ -566,7 +574,7 @@ const ContactPage = () => {
             
             <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
               Find Us in 
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Kolkata</span>
+              <span className="bg-gradient-to-r from-infiw3b-600 to-violet-600 bg-clip-text text-transparent"> Kolkata</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Located in the cultural capital of India, we serve clients globally while being rooted in local expertise.
@@ -599,9 +607,6 @@ const ContactPage = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 };

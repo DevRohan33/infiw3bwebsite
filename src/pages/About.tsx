@@ -1,15 +1,21 @@
 import { Check, Users, Award, Target, BookOpen, ShieldCheck, Sparkles, Zap, Heart } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const About = () => {
   return (
     <main>
-      <Navbar/>
+      <Helmet>
+        <title>About Infiw3b - Our Mission to Empower Professionals</title>
+        <meta name="description" content="Learn about Infiw3b's journey, our mission to bridge the professional support gap, and meet our expert team of industry veterans." />
+        <meta name="keywords" content="about infiw3b, career empowerment, expert guidance, professional success, industry veterans" />
+        <meta property="og:title" content="About Infiw3b - Our Mission to Empower Professionals" />
+        <meta property="og:description" content="Learn about Infiw3b's journey and our mission to bridge the professional support gap." />
+      </Helmet>
+      
       
       {/* Enhanced Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-screen flex items-center">
@@ -31,24 +37,24 @@ const About = () => {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-5xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 mb-8">
-              <Sparkles className="w-4 h-4 text-purple-600 mr-2" />
-              <span className="text-sm font-semibold text-purple-700">Your Success Story Starts Here</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-infiw3b-50 border border-infiw3b-100 mb-8">
+              <Sparkles className="w-4 h-4 text-infiw3b-600 mr-2" />
+              <span className="text-sm font-semibold text-infiw3b-700">Your Success Story Starts Here</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
               <span className="text-gray-900">About</span> {" "}
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-infiw3b-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">
                 Infiw3b
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Empowering professionals worldwide with <span className="font-semibold text-purple-600">expert guidance</span>, 
-              <span className="font-semibold text-pink-600"> real-time support</span>, and 
-              <span className="font-semibold text-blue-600"> innovative solutions</span>
+              Empowering professionals worldwide with <span className="font-semibold text-infiw3b-600">expert guidance</span>, 
+              <span className="font-semibold text-violet-600"> real-time support</span>, and 
+              <span className="font-semibold text-indigo-600"> innovative solutions</span>
             </p>
 
             {/* Stats Row */}
@@ -77,14 +83,14 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slide-in" className="order-2 lg:order-1">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 mb-6">
-                <Heart className="w-4 h-4 text-blue-600 mr-2" />
-                <span className="text-sm font-medium text-blue-700">Our Journey</span>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-infiw3b-50 border border-infiw3b-200 mb-6">
+                <Heart className="w-4 h-4 text-infiw3b-600 mr-2" />
+                <span className="text-sm font-medium text-infiw3b-700">Our Journey</span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                 Transforming Careers, 
-                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"> One Success at a Time</span>
+                <span className="bg-gradient-to-r from-infiw3b-600 to-indigo-600 bg-clip-text text-transparent"> One Success at a Time</span>
               </h2>
               
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
@@ -206,14 +212,14 @@ const About = () => {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection className="text-center max-w-4xl mx-auto mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 mb-6">
-              <Target className="w-4 h-4 text-purple-600 mr-2" />
-              <span className="text-sm font-medium text-purple-700">Why We're Different</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-infiw3b-50 border border-infiw3b-200 mb-6">
+              <Target className="w-4 h-4 text-infiw3b-600 mr-2" />
+              <span className="text-sm font-medium text-infiw3b-700">Why We're Different</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Why Choose 
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Infiw3b?</span>
+              <span className="bg-gradient-to-r from-infiw3b-600 to-violet-600 bg-clip-text text-transparent"> Infiw3b?</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               We're not just another service provider – we're your career transformation partner, committed to your success with innovative approaches and unwavering support.
@@ -489,8 +495,6 @@ const About = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };

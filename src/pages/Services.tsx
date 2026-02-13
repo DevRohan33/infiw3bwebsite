@@ -1,13 +1,11 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Shield, Trophy, BarChart, Zap, PenTool, Code, Users, Clock, Star, CheckCircle } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import CTASection from "@/components/CTASection";
 import ContactFormModal from "@/components/ContactFormModal";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
 const Services = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
@@ -16,7 +14,14 @@ const Services = () => {
 
   return (
     <main>
-      <Navbar />
+      <Helmet>
+        <title>Professional Technical Services - Infiw3b | Web, 3D, Gen AI & DevOps</title>
+        <meta name="description" content="Explore our comprehensive technical services: Web development, 3D development, Gen AI, DevOps, ML, and Data Analysis." />
+        <meta name="keywords" content="web services, 3D development, Gen AI, DevOps, Python, REST API, AWS, Cloud, Fullstack, ML, Data Analysis" />
+        <meta property="og:title" content="Professional Technical Services - Infiw3b | Web, 3D, Gen AI & DevOps" />
+        <meta property="og:description" content="Explore our comprehensive technical services: Web development, 3D development, Gen AI, DevOps, ML, and Data Analysis." />
+      </Helmet>
+      
       <ContactFormModal isOpen={isContactModalOpen} onClose={closeContactModal} />
 
       {/* Enhanced Header */}
@@ -33,22 +38,21 @@ const Services = () => {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="fade-in-up" className="text-center max-w-5xl mx-auto">
             {/* Header Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 mb-8">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-infiw3b-50 border border-infiw3b-100 mb-8">
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-semibold text-purple-700">Trusted by 500+ Professionals Worldwide</span>
+              <span className="text-sm font-semibold text-infiw3b-700">Trusted by 500+ Professionals Worldwide</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Our Services
-              </span>
-            </h1>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Why Choose 
+                <span className="bg-gradient-to-r from-infiw3b-600 to-violet-600 bg-clip-text text-transparent"> Infiw3b?</span>
+              </h2>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              Comprehensive solutions to help you succeed in your career and projects. 
+              Comprehensive technical solutions for your job tasks, interviews, and projects. 
               <br className="hidden md:block" />
-              From <span className="font-semibold text-purple-600">job support</span> to 
-              <span className="font-semibold text-pink-600"> custom software development</span>, 
+              From <span className="font-semibold text-infiw3b-600">job & project support</span> to 
+              <span className="font-semibold text-violet-600"> technical project development</span>, 
               we've got you covered.
             </p>
 
@@ -72,13 +76,13 @@ const Services = () => {
                 variant="action" 
                 size="auto" 
                 onClick={openContactModal} 
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-infiw3b-600 to-violet-600 hover:from-infiw3b-700 hover:to-violet-700 text-white font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 🚀 Get Free Consultation
               </Button>
               <Button 
                 variant="outline"
-                className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 backdrop-blur-sm bg-white/50"
+                className="border-2 border-infiw3b-300 text-infiw3b-700 hover:bg-infiw3b-50 font-semibold px-8 py-4 h-auto rounded-xl transition-all duration-300 backdrop-blur-sm bg-white/50"
               >
                 💬 Whatsapp: +91 94333 13760
               </Button>
@@ -99,22 +103,22 @@ const Services = () => {
             {[
               {
                 icon: <Shield className="w-8 h-8" />,
-                title: "Job Support",
-                description: "Real-time assistance for your daily work challenges",
+                title: "Job & Project Support",
+                description: "Technical assistance for daily work and project challenges",
                 color: "from-blue-500 to-blue-600",
                 bgColor: "from-blue-50 to-blue-100"
               },
               {
                 icon: <Trophy className="w-8 h-8" />,
-                title: "Interview Prep",
-                description: "Comprehensive preparation for your dream Company",
+                title: "Interview Guidance",
+                description: "Professional mentoring and document optimization",
                 color: "from-green-500 to-green-600",
                 bgColor: "from-green-50 to-green-100"
               },
               {
                 icon: <Code className="w-8 h-8" />,
-                title: "Software Projects",
-                description: "Custom development solutions for any requirement",
+                title: "Technical Projects",
+                description: "High-end development solutions for AI, 3D, and more",
                 color: "from-purple-500 to-purple-600",
                 bgColor: "from-purple-50 to-purple-100"
               }
@@ -159,8 +163,9 @@ const Services = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {[
-                "Business Analyst", "Salesforce", "Full Stack", "Java/Spring", "DevOps", "Power BI",
-                ".NET", "RPA", "SAP", "QA Testing", "Data Engineering", "Cloud"
+                "Web Services", "3D Development", "Gen AI", "DevOps", "Python", "REST API",
+                "AWS", "Cloud", "Fullstack", "ML", "Data Analysis", "AI Automation",
+                "Advanced Chatbots", "RAG Systems", "Multi-tenant", "Vector DBs"
               ].map((domain, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-blue-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-300 transition-colors duration-200">
@@ -177,15 +182,15 @@ const Services = () => {
             <AnimatedSection animation="fade-in-up" delay={100}>
               <ServiceCard
                 icon={<Shield size={24} />}
-                title="Business Analyst Support"
-                description="BA domain support: requirements, analysis, documentation with real-world experience."
+                title="AI & ML Support"
+                description="Expert assistance for AI model implementation, training, and machine learning tasks."
                 features={[
-                  "User story writing & refinement",
-                  "Stakeholder management",
-                  "Process mapping & workflows",
-                  "Agile documentation & tools"
+                  "Model training guidance",
+                  "Data preprocessing help",
+                  "Advanced AI Automation",
+                  "RAG Chatbot workflows"
                 ]}
-                buttonText="Get BA Support"
+                buttonText="Get AI Support"
                 buttonOnClick={openContactModal}
                 className="bg-white hover:shadow-lg transition-shadow duration-300"
               />
@@ -194,15 +199,15 @@ const Services = () => {
             <AnimatedSection animation="fade-in-up" delay={200}>
               <ServiceCard
                 icon={<Code size={24} />}
-                title="Developer Support"
-                description="Real-time support for dev tasks, code reviews, and architecture decisions from senior developers."
+                title="Technical Support"
+                description="Real-time support for Python development, Web services, and general software tasks."
                 features={[
-                  "Code review & debugging sessions",
-                  "API design & backend support",
-                  "Spring Boot & Full Stack guidance",
-                  "Performance optimization tips"
+                  "Python script debugging",
+                  "Web development assistance",
+                  "REST API implementation",
+                  "Technical troubleshooting"
                 ]}
-                buttonText="Get Dev Support"
+                buttonText="Get Tech Support"
                 buttonOnClick={openContactModal}
                 className="bg-white hover:shadow-lg transition-shadow duration-300"
               />
@@ -211,15 +216,15 @@ const Services = () => {
             <AnimatedSection animation="fade-in-up" delay={300}>
               <ServiceCard
                 icon={<Zap size={24} />}
-                title="QA Support"
-                description="Testing guidance for manual & automation testing roles with industry best practices."
+                title="Project Support"
+                description="Guidance for personal projects, 3D development, and small software builds."
                 features={[
-                  "Test case design & execution",
-                  "Automation framework setup",
-                  "Selenium, Postman, JIRA training",
-                  "Defect management & reporting"
+                  "3D project assistance",
+                  "Personal project mentoring",
+                  "Small software architecture",
+                  "Custom technical guidance"
                 ]}
-                buttonText="Get QA Support"
+                buttonText="Get Project Support"
                 buttonOnClick={openContactModal}
                 className="bg-white hover:shadow-lg transition-shadow duration-300"
               />
@@ -256,10 +261,10 @@ const Services = () => {
               <Trophy className="w-4 h-4 mr-2" />
               Interview Preparation
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Interview Preparation</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Interview Guidance</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Be fully prepared with mock sessions, resume tuning, and live assistance during real interviews. 
-              Our experts have helped hundreds of candidates land their dream jobs.
+              Elevate your interview performance with strategic guidance, document optimization, and expert mentoring.
+              We help you showcase your best self to potential employers.
             </p>
           </AnimatedSection>
 
@@ -293,15 +298,15 @@ const Services = () => {
             <AnimatedSection animation="fade-in-up" delay={100}>
               <ServiceCard
                 icon={<Trophy size={24} />}
-                title="Mock Interviews"
-                description="Practice sessions with real feedback from domain experts to boost your confidence."
+                title="Interview Guidance"
+                description="Strategic mentoring and advice to help you navigate technical and behavioral interview rounds."
                 features={[
-                  "Real interview simulation environment",
-                  "Behavioral & technical rounds",
-                  "Detailed performance feedback",
-                  "Confidence building coaching"
+                  "Interview strategy planning",
+                  "Technical concept guidance",
+                  "Behavioral question coaching",
+                  "Industry-specific best practices"
                 ]}
-                buttonText="Book Mock Session"
+                buttonText="Get Guidance"
                 buttonOnClick={openContactModal}
                 className="bg-white hover:shadow-lg transition-shadow duration-300"
               />
@@ -311,12 +316,12 @@ const Services = () => {
               <ServiceCard
                 icon={<BarChart size={24} />}
                 title="Resume Optimization"
-                description="Boost your resume with ATS-friendly format and recruiter-approved content."
+                description="Boost your resume with ATS-friendly format and recruiter-approved technical content."
                 features={[
                   "ATS keyword optimization",
-                  "Role-specific CV customization",
+                  "Technical skill highlighting",
                   "Professional design templates",
-                  "Free expert review session"
+                  "Expert review session"
                 ]}
                 buttonText="Optimize Resume"
                 buttonOnClick={openContactModal}
@@ -327,13 +332,13 @@ const Services = () => {
             <AnimatedSection animation="fade-in-up" delay={300}>
               <ServiceCard
                 icon={<PenTool size={24} />}
-                title="Live Interview Assistance"
-                description="Get real-time help during the actual interview process with our silent support."
+                title="CV Ready Services"
+                description="Get a professionally polished CV that effectively communicates your technical expertise."
                 features={[
-                  "Silent technical support",
-                  "Quick Q&A assistance via chat",
-                  "Post-interview feedback session",
-                  "Stress management techniques"
+                  "Professional CV formatting",
+                  "Impactful summary writing",
+                  "Project description tuning",
+                  "Modern professional layout"
                 ]}
                 buttonText="Learn More"
                 buttonOnClick={openContactModal}
@@ -367,12 +372,12 @@ const Services = () => {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {[
-                  "React",
-                  "Node.js",
+                  "Generative AI",
+                  "3D Development",
                   "Python",
-                  "Java",
-                  "AWS",
-                  "MongoDB"
+                  "Next.js",
+                  "AWS/Cloud",
+                  "PyTorch/ML"
                 ].map((tech, index) => (
                   <div key={index} className="text-center">
                     <div className="bg-red-100 hover:bg-red-300 text-gray-700 px-4 py-3 rounded-xl text-sm font-medium shadow-sm transition-all duration-200">
@@ -426,10 +431,10 @@ const Services = () => {
                 title="Proof of Concept (PoC)"
                 description="Test new ideas with quick MVP builds and interactive prototypes for validation."
                 features={[
-                  "Technical feasibility analysis",
-                  "Minimal viable product design",
-                  "Rapid prototyping & development",
-                  "Investor-ready pitch materials"
+                  "Multi-tenant SaaS solutions",
+                  "Advanced RAG System builds",
+                  "Enterprise Chatbot setups",
+                  "Interactive prototypes & MVP"
                 ]}
                 buttonText="Start PoC"
                 buttonOnClick={openContactModal}
@@ -444,9 +449,9 @@ const Services = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Project Pricing</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { type: "Small Projects", price: "₹999+", desc: "Simple web apps, basic CRUD operations" },
-                  { type: "Medium Projects", price: "₹3,999+", desc: "Full-stack apps with authentication" },
-                  { type: "Large Projects", price: "Custom Quote", desc: "Enterprise solutions, complex systems" }
+                  { type: "Small Projects", price: "Custom Quote", desc: "Python scripts, AI automation, small RAG tasks" },
+                  { type: "Medium Projects", price: "Custom Quote", desc: "Technical websites, RAG Chatbots, 3D prototypes" },
+                  { type: "Large Projects", price: "Custom Quote", desc: "Multi-tenant systems, Advanced AI solutions" }
                 ].map((pricing, index) => (
                   <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200">
                     <h4 className="font-bold text-lg text-gray-900 mb-2">{pricing.type}</h4>
@@ -508,8 +513,6 @@ const Services = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };
